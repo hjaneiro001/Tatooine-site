@@ -279,6 +279,22 @@ h6 {
   visibility: visible;
 }
 
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#mensaje-envio {
+  animation: fade 3s infinite; /* La animación dura 3 segundos y se repite infinitamente */
+}
+
 @media (max-width: 1366px) {
   .navbar .dropdown .dropdown ul {
     left: -90%;

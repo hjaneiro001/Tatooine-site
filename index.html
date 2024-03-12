@@ -19,25 +19,16 @@
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
     rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <!--  <link href="assets/vendor/aos/aos.css" rel="stylesheet"> -->
 
   <!-- Bootstrap -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
   <!-- Bootstrap Icons-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-  <!-- <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
-   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"> -->
-   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet"> 
-   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"> 
-   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> 
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
@@ -52,6 +43,9 @@
       });
     })();
   </script>
+
+  <!-- recaptcha -->
+
   <!-- =======================================================
   * Template Name: Arsha
   * Updated: Jan 29 2024 with Bootstrap v5.3.2
@@ -345,11 +339,13 @@
               la solucion mas profesional del mercado
             </p>
           </div>
-        <!--   <div class="d-flex justify-content-center mt-4">
+          <!--   <div class="d-flex justify-content-center mt-4">
             <button class="btn btn-secondary btn-rounded text-white" id="btnConsultanos">Enviar email</button>
           </div> -->
-          <a type="button" class="btn border border-1 border-primary custom-btn text-white" style="border-radius: 26px; background-color: transparent;"><span class="pt-2 pb-2 pl-3 pl-3">Consultanos</span></a>
-        
+          <a type="button" class="btn border border-1 border-primary custom-btn text-white"
+            style="border-radius: 26px; background-color: transparent;"><span
+              class="pt-2 pb-2 pl-3 pl-3">Consultanos</span></a>
+
         </div>
 
       </div>
@@ -568,48 +564,68 @@
 
 
           <div class="ml-5" style="margin-left: 5%;">
+
             <div class="info">
+
               <div class="row text-center" style="margin-top: -20px; margin-bottom: 10px;">
                 <h4>Contactenos</h4>
               </div>
-              <form id="form_contact" class="row needs-validation" novalidate>
-                <div class="form-floating col-8 mb-2">
-                  <input id="from_name" type="text" class="form-control" maxlength="30" required>
-                  <label for="from_name" class="form-label" style="margin-left: 2%;">Nombre</label>
-                  <div class="invalid-feedback">
-                    Necesita ingresar un nombre
-                  </div>
-                </div>
-                <div class="form-floating col-8 mb-2">
-                  <input id="reply_to" type="text" class="form-control" maxlength="30" required>
-                  <label for="reply_to" class="form-label" style="margin-left: 2%;">E mail</label>
-                  <div class="invalid-feedback">
-                    Necesita ingresar un eMail
-                  </div>
-                </div>
 
-                <div class="form-floating col-12">
-                  <textarea id="message_contact" class="form-control" maxlength="255" required
-                    style="height: 128px; padding-top: 10px;"></textarea>
-                  <label for="message_contact" class="form-label" style="margin-left: 2%;">Mensaje</label>
-                  <div class="invalid-feedback">
-                    Necesita ingresar un mensaje
-                  </div>
-                </div>
-                <div id="alerta-envio-email" class="alert alert-success alert-dismissible pl-4 mb-0 w-100 d-none"
-                  role="alert">
-                  <div class="row">
-                    <p class="col-5 mb-0 mr-0"><strong>Ingreso Exitoso !</strong>
-                    </p>
-                    <button id="boton-cerrar-alert-ingreso-mp" type="button" class="btn-close col-4"
-                      data-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                </div>
+              <div>
 
-              </form>
-              <div class="d-flex justify-content-center mt-4">
-                <button class="btn btn-primary" id="btnEmail">Enviar email</button>
+                <form id="form_contact" class="row needs-validation" novalidate>
+
+                  <div class="form-floating col-8 mb-2">
+                    <input id="from_name" type="text" class="form-control" maxlength="30" required>
+                    <label for="from_name" class="form-label" style="margin-left: 2%;">Nombre</label>
+                    <div class="invalid-feedback">
+                      Necesita ingresar un nombre
+                    </div>
+                  </div>
+
+                  <div class="form-floating col-8 mb-2">
+                    <input id="reply_to" type="text" class="form-control " maxlength="30" required>
+                    <label for="reply_to" class="form-label" style="margin-left: 2%;">E mail</label>
+                    <div class="invalid-feedback">
+                      Necesita ingresar un eMail
+                    </div>
+                  </div>
+
+                  <div class="form-floating col-12">
+                    <textarea id="message_contact" class="form-control" maxlength="255" required
+                      style="height: 128px; padding-top: 30px;"></textarea>
+                    <label for="message_contact" class="form-label" style="margin-left: 2%;">Mensaje</label>
+                    <div class="invalid-feedback">
+                      Necesita ingresar un mensaje
+                    </div>
+                  </div>
+
+                  <div id="alerta-enviando-email" class="mb-0 mt-4 border rounded w-100 d-none" style="background-color: darkorange;">
+                    <div class="row d-flex align-items-center">
+                      <div id="mensaje-envio" class="mb-0 text-white pt-2 pb-2"><strong>Envíando.....!</strong></div>
+                    </div>
+                  </div>
+
+                  <div id="alerta-envio-email" class="mb-0 mt-4 border rounded w-100 d-none" style="background-color: darkblue ">
+                    <div class="row d-flex align-items-center">
+                      <div class="mb-0 text-white pt-2 pb-2"><strong>Envío de email exitoso!</strong></div>
+                    </div>
+                  </div>
+    
+                  <div id="alerta-fallo-envio-email" class="bg-danger mb-0 mt-4 border rounded w-100 d-none">
+                    <div class="row d-flex align-items-center">
+                      <div class="mb-0 text-white pt-2 pb-2"><strong>Fallo envio de email!</strong></div>
+                    </div>
+                  </div>
+
+                  <div id="div-btn-email" class="d-flex justify-content-center mt-4">
+                    <button class="btn btn-primary" id="btnEmail">Enviar email</button>
+                  </div>
+
+                </form>
+
               </div>
+
             </div>
           </div>
         </div>
@@ -721,3 +737,28 @@
 </body>
 
 </html>
+
+
+<script>
+  // Esto es la validacion de formularios manejada por Bootstrap, va en cada modulo html x una cuestion spa
+  (() => {
+
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', (event) => {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+        form.classList.add('was-validated')
+        event
+          .preventDefault() // Ojo este prevent default lo agregue yo 
+      }, false)
+    })
+  })()
+</script>

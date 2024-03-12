@@ -168,14 +168,14 @@
   /**
    * Initiate  glightbox 
    */
- const glightbox = GLightbox({
+/*  const glightbox = GLightbox({
     selector: '.glightbox'
   });
-
+ */
   /**
    * Skills animation
    */
-  let skilsContent = select('.skills-content');
+  /* let skilsContent = select('.skills-content');
   if (skilsContent) {
     new Waypoint({
       element: skilsContent,
@@ -188,19 +188,19 @@
       }
     })
   }
-
+ */
 
   /**
    * Animation on scroll
    */
-   window.addEventListener('load', () => {
+   /* window.addEventListener('load', () => {
     AOS.init({
       duration: 1000,
       easing: "ease-in-out",
       once: true,
       mirror: false
     }); 
-  }); 
+  });  */
 
 })()
 
@@ -210,20 +210,33 @@
 ////////// Escucha Submit /////////////
 let btn_contact = document.getElementById("btnEmail")
   btn_contact.addEventListener("click", ()=>{
-  sendEmail()
+
 }) 
 
 function sendEmail() {
+  document.getElementById("div-btn-email").classList.add("d-none")
+  document.getElementById("alerta-enviando-email").classList.remove("d-none")
   emailjs.send("service_y493u4q", "template_tjnhf3h", {
     to_name: "Tatooine",
     from_name: document.getElementById("from_name").value,
     reply_to: document.getElementById("reply_to").value,
     message:  document.getElementById("message_contact").value
 }).then(function(response) {
-  alert("email enviado")
-    console.log("Email sent successfully", response);
+  document.getElementById("alerta-enviando-email").classList.add("d-none")
+  document.getElementById("alerta-envio-email").classList.remove("d-none")
 }, function(error) {
-    console.error("Email not sent", error);
+  document.getElementById("alerta-enviando-email").classList.remove("d-none")
+  document.getElementById("alerta-fallo-envio-email").classList.remove("d-none")
 });
 
 }
+
+$("#form_contact").submit(async function () {
+
+  let form = document.getElementById("form_contact")
+
+  if (form.checkValidity()) {
+    sendEmail()
+  }
+
+});
